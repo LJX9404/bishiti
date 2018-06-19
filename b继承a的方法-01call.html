@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>十六，b继承a的方法</h1>
+</body>
+<script>
+function Person(name) {
+    this.name=name;
+    this.say=function () {
+        console.log(this.name);
+    }
+    this.secret=function (secret) {
+        this.secret=secret;
+    }
+    this.ask=function (age,message) {
+        console.log(this.name+"我"+age+"岁"+",我的秘密是"+this.secret+message)
+    }
+}
+var person1=new Person("小明");
+var person2=new Person("小华");
+person2.secret("我是土豪");
+person1.say.call(person2);
+person1.ask.call(person2,18,"啦啦啦")
+
+
+</script>
+</html>

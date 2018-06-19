@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>六，随机生成长度为8,的字符不重复的字符串</h1>
+</body>
+<script>
+    function conbact() {
+        var str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var arr=str.split("");
+        var newArr=[];
+        for (var i=0;i<8;i++){
+            //新数组的长度为8
+            var index=Math.floor(Math.random()*62);
+            //随机产生老数组的下标
+            if(newArr.indexOf(arr[index])<0){
+                //如果目标数组中不包含随机出的数据，就把尾部随机数据添加至目标数组
+                newArr.push(arr[index]);
+                index++;
+            }
+        }
+        return newArr;
+    }
+    console.log(conbact());
+
+</script>
+</html>

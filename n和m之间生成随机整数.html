@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机整数</title>
+</head>
+<body>
+<h1>十，n和m之间生成随机整数</h1>
+</body>
+<script>
+      function  randomInt(m,n) {
+        if(n>=m){
+            var a=Math.floor(Math.random()*(n-m)+m);
+        }
+        else {
+            var a=Math.floor(Math.random()*(m-n)+n);
+        }
+        return a;
+    }
+    console.log(randomInt(30,7));
+    console.log(randomInt(30,7));
+    console.log(randomInt(30,7));
+
+
+
+</script>
+</html>

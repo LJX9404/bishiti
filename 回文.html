@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文</title>
+    <script src="Stack.js"></script>
+</head>
+<body>
+<h1>一，判断一个单词是否是回文</h1>
+</body>
+<script>
+   function isPalindrome(word){
+       var length=word.length;
+       var stack=new Stack();
+       for (var i=0;i<length;i++){
+           stack.push(word[i])
+       }
+       var data="";
+       stack.forEach(function (itme) {
+           data=data+itme;
+       })
+      if (data==word){
+           return  true;
+      }
+      else{
+          return false;
+      }
+   }
+//   var stack=new Stack();
+//   stack.push("小花");
+//   stack.push("小红");
+//   stack.push("小绿");
+//   stack.push("小兰");
+//   stack.push("小草");
+//stack.forEach(function (itme) {
+//    console.log(itme)
+//})
+  console.log(isPalindrome("1212121"));
+</script>
+</html>

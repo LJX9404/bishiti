@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>三，统计一个字符串出现最多的字母</h1><br>
+
+</body>
+<script>
+    var str="someone think  that program is interesting"
+    var arr=str.split(" ");
+    //以空格符分割字符串以获取字母组成数组
+    var json={};
+    var number=0;
+    var target="";
+    for (var i=0;i<arr.length;i++){
+        for (var j=0;j<arr[i].length;j++){
+            if (json[arr[i].charAt(j)]){
+                json[arr[i].charAt(j)]++
+            }
+           else{
+                json[arr[i].charAt(j)]=1
+            }
+        }
+    }
+    for (var key in json){
+        document.write(key+":"+json[key]+"<br>")
+        if (json[key]>number){
+            number=json[key];
+            target=key;
+        }
+    }
+    document.write("最多出现的字母是"+target+"<br>"+"共出现"+number+"次")
+//json 相当于集合，有键和值； charAt(index);  字符串中指定索引位置的字符;
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>五，pop(),push(),unshift(),shift()</h1>
+</body>
+<script>
+    function pop(arr) {
+        var length=arr.length;
+       var buffer=arr[length-1];
+        arr[length-1]=null;
+        //直接把最后的元素置空
+        arr.length=arr.length-1;
+        //数组长度减一，最好不要写成length=length-1
+        return arr;
+    }
+//在尾部删除
+    function push(arr,data) {
+        var length=arr.length;
+        arr[length]=data;
+        return  arr;
+
+    }
+    //在尾部添加
+    function shift(arr,data) {
+        var length=arr.length;
+        for(var i=length-1;i>=0;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[0]=data;
+        return arr;
+    }
+    //在头部添加
+
+    function  unshift(arr) {
+        var length=arr.length;
+        var buffer =arr[0];
+    for(var i=0;i<length-1;i++){
+        arr[i]=arr[i+1];
+    }
+    arr[length-1]=null;
+    arr.length=arr.length-1;
+    return arr;
+    }
+    //在头部删除
+    var arr=[11,22,33,44,55];
+    console.log(pop(arr));
+    console.log(push(arr,66));
+    console.log(shift(arr,66));
+    console.log(unshift(arr));
+
+
+</script>
+</html>
